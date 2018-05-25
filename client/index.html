@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<hmtl lang="es">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" :/>
+
+        <title> Chat con Socket.io y NodeJS</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="main.js"></script>
+
+        <style>
+            #messages {
+                height: 350px;
+                overflow-y: scroll;
+                border: 1px solid #eee;
+                box-shadow: 0px 0px 20px #ccc inset;
+                /*background-image: url(9021.jpg);*/
+            }
+
+            .message {
+                margin: 20px;
+                padding: 5px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                background: white;
+                box-shadow: 0px 0px 20px rgb(61, 61, 61);
+            }
+
+            label {
+                float: right;
+            }
+
+            img {
+                height: 50px;
+                width: 45px;
+            }
+
+            #George {
+                border: 1px solid rgb(88, 88, 88);
+                background-color: gainsboro;
+            }
+
+            #Isra {
+                border: 1px solid rgb(71, 71, 71);
+                background-color: rgb(3, 0, 0);
+                color: white;
+            }
+
+            #Manu {
+                border: 1px solid rgb(255, 1, 1);
+                background-color: rgb(255, 163, 163);
+            }
+
+            #Sofi {
+                border: 1px solid #009ef1;
+                background-color: #7ec8de;
+            }
+
+            #Leo {
+                border: 1px solid rgb(255, 1, 1);
+                background-color: rgb(255, 163, 163);
+            }
+
+            #lbl_nickname {
+                float: left;
+            }
+
+            #user {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body class="container">
+        <h1>ISRA´S TEAM<i class="em em-avocado"></i><i class="em em-astonished"></i>
+            <img src="9021.jpg">
+        </h1>
+        <audio src="3724.mp3" id="audio"></audio>
+        <div class="col-10 justify-content-center" id="messages"></div>
+        <div class="col-10 justify-content-center">
+            <form onsubmit="return addMessage(this);">
+                <!--<input type="text" id="nickname" placeholder="Nickname">-->
+                <label id="lbl_nickname" for="nickname">Selecciona el usuario:</label><i class="em em-speak_no_evil"></i>
+                <select id="nickname" class="form-control">
+                    <option value="Isra">Isra</option>
+                    <option value="Manu">Manu</option>
+                    <option value="Sofi">Sofi</option>
+                    <option value="Leo">Leo</option>
+                    <option value="George">George</option>
+                </select>
+                <br>
+                <div class="alert alert-info" id="user" role="alert">
+
+                </div>
+                <textarea class="form-control" rows="3" id="text" placeholder="Ingresa el mensaje..."></textarea>
+                <input class="btn btn-primary" type="submit" value="Enviar" />
+            </form>
+        </div>
+
+    </body>
+</hmtl>
