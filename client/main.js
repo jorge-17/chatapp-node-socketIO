@@ -1,4 +1,4 @@
-var socket = io.connect('http://172.16.110.61:6677', { 'forceNew': true });
+var socket = io.connect('https://chatapp-bla.herokuapp.com/', { 'forceNew': true });
 
 socket.on('messages', function (data) {
     console.log(data);
