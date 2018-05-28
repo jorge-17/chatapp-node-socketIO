@@ -1,0 +1,59 @@
+#messages {
+                height: 350px;
+                overflow-y: scroll;
+                border: 1px solid #eee;
+                box-shadow: 0px 0px 20px #ccc inset;
+                /*background-image: url(9021.jpg);*/
+            }
+
+            .message {
+                margin: 20px;
+                padding: 5px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                background: white;
+                box-shadow: 0px 0px 20px rgb(61, 61, 61);
+            }
+
+            label {
+                float: right;
+            }
+
+            img {
+                height: 50px;
+                width: 45px;
+            }
+
+            #George {
+                border: 1px solid rgb(88, 88, 88);
+                background-color: gainsboro;
+            }
+
+            #Isra {
+                border: 1px solid rgb(71, 71, 71);
+                background-color: rgb(3, 0, 0);
+                color: white;
+            }
+
+            #Manu {
+                border: 1px solid rgb(255, 1, 1);
+                background-color: rgb(255, 163, 163);
+            }
+
+            #Sofi {
+                border: 1px solid #009ef1;
+                background-color: #7ec8de;
+            }
+
+            #Leo {
+                border: 1px solid rgb(255, 1, 1);
+                background-color: rgb(255, 163, 163);
+            }
+
+            #lbl_nickname {
+                float: left;
+            }
+
+            #user {
+                display: none;
+            }

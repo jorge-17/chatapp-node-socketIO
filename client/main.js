@@ -51,3 +51,10 @@ function addMessage(e) {
     document.getElementById("text").value = "";
     return false;
 }
+
+$(document).ready(function () {
+    $("#text").emojioneArea({
+        pickerPosition: "right",
+        tonesStyle: "bullet"
+    })
+})
