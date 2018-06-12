@@ -14,24 +14,6 @@ var messages = [{
     time: ''
 }];
 
-function signinCallback(authResult) {
-    if (authResult['status']['signed_in']) {
-  
-       // Add the Google access token to the Cognito credentials login map.
-       AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-          IdentityPoolId: 'us-east-2_peADaUN0M',
-          Logins: {
-             'accounts.google.com': authResult['id_token']
-          }
-       });
-  
-       // Obtain AWS credentials
-       AWS.config.credentials.get(function(err, data){
-          console.log(data);
-       });
-    }
-  }
-
 
 //Conexión al socket
 io.on('connection', function (socket) {
