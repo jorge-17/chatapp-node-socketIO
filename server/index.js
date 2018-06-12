@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var AWS = require('aws-sdk');
 
 app.use(express.static('client'));
 
@@ -13,6 +14,23 @@ var messages = [{
     time: ''
 }];
 
+function signinCallback(authResult) {
+    if (authResult['status']['signed_in']) {
+  
+       // Add the Google access token to the Cognito credentials login map.
+       AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+          IdentityPoolId: 'us-east-2_peADaUN0M',
+          Logins: {
+             'accounts.google.com': authResult['id_token']
+          }
+       });
+  
+       // Obtain AWS credentials
+       AWS.config.credentials.get(function(err, data){
+          console.log(data);
+       });
+    }
+  }
 
 
 //Conexión al socket

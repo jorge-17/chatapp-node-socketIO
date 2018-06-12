@@ -1,5 +1,6 @@
 //var socket = io.connect('http://172.16.110.61:6677', { 'forceNew': true });
 var socket = io.connect('https://chatapp-bla.herokuapp.com/', { 'forceNew': true });
+//var socket = io.connect('http://chatappbla-env.cmh7qhnvau.us-east-2.elasticbeanstalk.com/', { 'forceNew': true });
 socket.on('messages', function (data) {
     console.log(data);
     render(data);
@@ -58,3 +59,26 @@ $(document).ready(function () {
         tonesStyle: "bullet"
     })
 })
+
+
+/*$(function() {
+    // Initializes and creates emoji set from sprite sheet
+    window.emojiPicker = new EmojiPicker({
+      emojiable_selector: '[data-emojiable=true]',
+      assetsPath: 'lib/img/',
+      popupButtonClasses: 'fa fa-smile-o'
+    });
+    // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+    // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+    // It can be called as many times as necessary; previously converted input fields will not be converted again
+    window.emojiPicker.discover();
+  });*/
+
+
+$("#btnSubmit").prop('disabled', true);
+$("#text").keyup(function () {
+    if ($(this).val() != "") {
+        $("#btnSubmit").prop('disabled', false);
+    }
+});
+
